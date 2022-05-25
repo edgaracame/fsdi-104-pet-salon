@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+/* Color Palette */
+/* https://i.pinimg.com/originals/61/c9/5e/61c95efc0f97ff23c9e74bb1e375d37a.png?fbclid=IwAR3wPchqy5ftJldXkvkH_x2UYebwVXFgZEGKvbX3306NiIo2RhZfzOp6CJA */
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+header{
+    height: 15vh;
+    background-color: #6474E5;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+header div{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 2rem;
+}
+
+header h1{
+    text-transform: uppercase;
+    margin-right: 2rem;
+    color: white;
+}
+
+header nav a{
+    margin-right: 2rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: white;
+}
+
+header nav a:visited{
+    color: white;
+}
+
+header nav a:hover{
+    text-decoration: underline;
+}
+
+body{
+    background-color: white;
+    height: 70vh;
+}
+
+.welcome{
+    text-align: center;
+    margin: 3rem;
+}
+
+.welcome h2{
+    color: #F5AFAF;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+}
+
+.welcome h2 span{
+    font-style: oblique;
+    color: #6474E5;
+}
+
+.welcome p{
+    margin: 1rem 10rem 0 10rem;
+    color: #4EA1D3;
+    font-size: 1.2rem;
+}
+
+.pets{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.pets-title{
+    color: white;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 2rem;
+}
+
+.pets-icon{
+    font-size: 2rem;
+    color: white;
+    margin: -5px;
+}
+
+.pets-dogs-img{
+    background-image: url(img/index-dogs.jpg);
+    background-position: center;
+    border-radius: 100%;
+    box-shadow: 0 0 15px 0px rgba(0,0,0,0.2);
+}
+
+.pets-cats-img{
+    background-image: url(img/index-cats.jpg);
+    background-position: center;
+    border-radius: 100%;
+    box-shadow: 0 0 15px 0px rgba(0,0,0,0.2);
+}
+
+.pets-others-img{
+    background-image: url(img/index-birds.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 100%;
+    box-shadow: 0 0 15px 0px rgba(0,0,0,0.2);
+}
+
+.pets-dogs{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #4ea0d3dd;
+    height: 25rem;
+    width: 25rem;
+    border-radius: 100%;
+}
+
+.pets-content{
+    width: 80%;
+    text-align: justify;
+    text-align-last: center;
+    color: white;
+}
+
+.pets-cats{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #9AA4ECdd;
+    height: 25rem;
+    width: 25rem;
+    border-radius: 100%;
+}
+
+.pets-others{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #0EACF3dd;
+    height: 25rem;
+    width: 25rem;
+    border-radius: 100%;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    height: 15vh;
+    background-color: #db8e8e;
+    color: white;
+    margin-top: 5rem;
+}
+
+footer p{
+    margin-right: 2rem;
+    font-size: .8rem;
+}
