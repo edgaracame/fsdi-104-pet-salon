@@ -11,34 +11,22 @@ let salon = {
         close: "5:00 pm"
     },
     phone: "555-555-555",
-    pets: [{
-        name: "Scooby",
-        age: 50,
-        gender: "Male",
-        breed: "Dane",
-        service: "Grooming",
-        owner: "Shaggy",
-        phone: "888-888-888"
-    },
-    {
-        name: "Bolt",
-        age: 15,
-        gender: "Male",
-        breed: "Shepherd",
-        service: "Bath",
-        owner: "Penny",
-        phone: "777-777-777"
-    },
-    {
-        name: "Marie",
-        age: 32,
-        gender: "Female",
-        breed: "Pug",
-        service: "Pawdicure",
-        owner: "Thomas",
-        phone: "333-333-333"
-    }]
+    pets: []
 }
+
+function Pet(name, age, gender, breed, service, owner, phone){
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+    this.breed = breed;
+    this.service = service;
+    this.ownerName = owner;
+    this.contactPhone = phone;
+}
+
+let scooby = new Pet("Scooby", 50, "Male", "Dane", "Grooming", "Shaggy", "888-888-888");
+let bolt = new Pet("Bolt", 15, "Male", "Shepherd", "Bath", "Penny", "777-777-777");
+let marie = new Pet("Marie", 32, "Female", "Pug", "Pawdicure", "Thomas", "333-333-333");
 
 function displaySalonInfo(){
     let element = document.getElementById("salonInfo");
@@ -51,14 +39,40 @@ function displaySalonInfo(){
 
     element.innerHTML = tmp;
 }
-displaySalonInfo();
 
-alert(`There are ${salon.pets.length} pets in the salon!`)
+function register(){
+    console.log("Registering");
 
-function displayPetName(){
-    for(i = 0; i < salon.pets.length; i++)
-    {
-        console.log(`Pet #${i+1}: ${salon.pets[i].name}`);
-    }
+    let petName = document.getElementById("txtName").value;
+    let petAge = document.getElementById("txtAge").value;
+    let petGender = document.getElementById("selGender").value;
+    let petBreed = document.getElementById("txtBreed").value;
+    let petService = document.getElementById("selService").value;
+    let ownerName = document.getElementById("txtOwner").value;
+    let ownerPhone = document.getElementById("txtPhone").value;
+
+    let newPet = new Pet(petName, petAge, petGender, petBreed, petService, ownerName, ownerPhone);
+
+    salon.pets.push(newPet);
+
+    console.log(newPet);
+    console.log(salon.pets);
+
+    clearForm();
 }
-displayPetName();
+
+function clearForm(){
+    document.getElementById("txtName").value = "";
+    document.getElementById("txtAge").value = "";
+    document.getElementById("selGender").value = "";
+    document.getElementById("txtBreed").value = "";
+    document.getElementById("selService").value = "";
+    document.getElementById("txtOwner").value = "";
+    document.getElementById("txtPhone").value = "";
+}
+
+function init(){
+    displaySalonInfo();
+    salon.pets.push(scooby, bolt, marie);
+}
+window.onload = init;

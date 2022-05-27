@@ -30,25 +30,13 @@ console.log(student.address.street); */
 
 let products = [];
 
-let product1 = {
+/* let product1 = {
     name: "Laptop",
     description: "HP laptop 14'' core i7",
     price: 200
-}
+} */
 
-let product2 = {
-    name: "Camera",
-    description: "Polaroid instant camera go white",
-    price: 100
-}
-
-let product3 = {
-    name: "Keyboard",
-    description: "Pro grade logitech g mechanical keyboard",
-    price: 150
-}
-
-products.push(product1, product2, product3);
+// products.push(product1, product2, product3);
 /* console.log(products[2]);
 console.log(products[2].name); */
 
@@ -58,3 +46,15 @@ function displayName(){
         console.log(products[i]);
     }
 }
+
+function Product(n, d, p){
+    this,name = n;
+    this.description = d;
+    this.price = p;
+}
+
+let product1 = new Product("Speaker", "Sony wireless", 20.50);
+let product2 = new Product("Laptop", "HP", 100.00);
+let product3 = new Product("Camera", "Polaroid instant", 75.25);
+let product4 = new Product("Keyboard", "LogiTech", 125.00);
+console.log(product1, product2, product3, product4);
