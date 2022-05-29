@@ -24,10 +24,6 @@ function Pet(name, age, gender, breed, service, owner, phone){
     this.contactPhone = phone;
 }
 
-let scooby = new Pet("Scooby", 50, "Male", "Dane", "Grooming", "Shaggy", "888-888-888");
-let bolt = new Pet("Bolt", 15, "Male", "Shepherd", "Bath", "Penny", "777-777-777");
-let marie = new Pet("Marie", 32, "Female", "Pug", "Pawdicure", "Thomas", "333-333-333");
-
 function displaySalonInfo(){
     let element = document.getElementById("salonInfo");
     let tmp = `
@@ -40,9 +36,21 @@ function displaySalonInfo(){
     element.innerHTML = tmp;
 }
 
-function register(){
-    console.log("Registering");
+let scooby = new Pet("Scooby", 50, "Male", "Dane", "Grooming", "Shaggy", "888-888-888");
+let bolt = new Pet("Bolt", 15, "Male", "Shepherd", "Vaccines", "Penny", "777-777-777");
+let marie = new Pet("Marie", 32, "Female", "Pug", "Nails Cut", "Thomas", "333-333-333");
 
+function isValid(aPet){
+    let valid = true;
+
+    if(aPet.name == "" || aPet.age == "" || aPet.gender == "" || aPet.breed == "" || aPet.service == "" || aPet.ownerName == "" || aPet.contactPhone == ""){
+        valid = false;
+    }
+
+    return valid;
+}
+
+function register(){
     let petName = document.getElementById("txtName").value;
     let petAge = document.getElementById("txtAge").value;
     let petGender = document.getElementById("selGender").value;
@@ -53,26 +61,34 @@ function register(){
 
     let newPet = new Pet(petName, petAge, petGender, petBreed, petService, ownerName, ownerPhone);
 
-    salon.pets.push(newPet);
+    if(isValid(newPet) == true){
+        salon.pets.push(newPet);
 
-    console.log(newPet);
-    console.log(salon.pets);
+        displayTable();
 
-    clearForm();
+        clearForm();
+    }
+    else{
+        alert("There is something wrong!");
+    }
 }
 
 function clearForm(){
-    document.getElementById("txtName").value = "";
-    document.getElementById("txtAge").value = "";
-    document.getElementById("selGender").value = "";
-    document.getElementById("txtBreed").value = "";
-    document.getElementById("selService").value = "";
-    document.getElementById("txtOwner").value = "";
-    document.getElementById("txtPhone").value = "";
+    /* let inputs = document.getElementsByTagName('input');
+    for(i = 0; i < inputs.length; i++){
+        inputs[i].value = "";
+    }
+
+    document.getElementById("selGender").value="";
+    document.getElementById("selService").value=""; */
+
+    $("input").val("");
+    $("select").val("");
 }
 
 function init(){
     displaySalonInfo();
     salon.pets.push(scooby, bolt, marie);
+    displayTable();
 }
 window.onload = init;
