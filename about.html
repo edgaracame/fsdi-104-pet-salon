@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="#">
+    <link rel="icon" href="img/favicon.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/34cefa1f3d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
@@ -23,13 +23,76 @@
         </div>
     </header>
 
-    <main>
-        <!-- information about the developer -->
+    <main class="container">
+        <div class="title">
+            <h2>Who are <span>we?</span></h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi ut ea tempore explicabo dolor odio autem maxime, deleniti eaque temporibus molestiae fugiat esse odit sint nihil, quaerat non beatae ullam? Alias aperiam asperiores in doloribus dicta repudiandae aspernatur, ullam iure quod commodi sunt quis nostrum et magnam, reprehenderit laborum repellendus.</p>
+        </div>
+
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="img/PetSalon1.jpg" class="d-block w-100" alt="Pet Salon">
+              </div>
+              <div class="carousel-item">
+                <img src="img/PetSalon2.jpg" class="d-block w-100" alt="Pet Salon">
+              </div>
+              <div class="carousel-item">
+                <img src="img/PetSalon3.jpg" class="d-block w-100" alt="Pet Salon">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <div class="container info">
+            <div class="row">
+                <div class="col info-map">
+                    <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
+                        <iframe src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="col info-about">
+                    <p class="info-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum et aliquam omnis porro unde nostrum impedit ipsam consequuntur quibusdam rem esse pariatur iusto minima, totam, incidunt fugit, cumque id saepe laborum officia odit. Id molestiae pariatur velit molestias perferendis praesentium, recusandae accusantium, tempora cumque tempore voluptatum rem corporis, distinctio aspernatur.</p>
+
+                    <div class="info-contact">
+                        <div class="info-icon">
+                            <i class="fa-solid fa-phone"></i>
+                            <h6>Give us a call!</h6>
+                            <p>000-000-000</p>
+                        </div>
+                        <div class="info-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <h6>Come to visit!</h6>
+                            <p>Palomar Street #265-K</p>
+                        </div>
+                        <div class="info-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                            <h6>Send an email!</h6>
+                            <p>fashionpet@petsalon.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer id="salonInfo">
     </footer>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <script src="js/register.js"></script>
 </body>
 </html>
