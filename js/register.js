@@ -66,6 +66,7 @@ function register(){
     let newPet = new Pet(petName, petAge, petType, petGender, petBreed, petService, ownerName, ownerPhone);
 
     if(isValid(newPet) == true){
+        savePet(newPet);
         salon.pets.push(newPet);
 
         displayTable();
